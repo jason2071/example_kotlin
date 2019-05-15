@@ -4,51 +4,14 @@
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
-        android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@android:color/darker_gray"
         tools:context=".MainActivity">
 
-    <Button
-            android:id="@+id/btnMainFragment"
-            android:text="Main Fragment"
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/mainRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-    <Button
-            android:id="@+id/btnFragment1"
-            android:text="Fragment 1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-    <Button
-            android:id="@+id/btnFragment2"
-            android:text="Fragment 2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-    <Button
-            android:id="@+id/btnUpdateRecyclerView"
-            android:text="update recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-    <Button
-            android:id="@+id/btnAllMember"
-            android:text="all member"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-    <Button
-            android:id="@+id/btnRegister"
-            android:text="register"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-    <Button
-            android:id="@+id/btnLogin"
-            android:text="login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent"/>
 
 </LinearLayout>
