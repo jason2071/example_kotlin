@@ -8,11 +8,13 @@ import android.support.v7.widget.LinearLayoutManager
 import com.example.demokotlin.activity.LayoutActivity
 import com.example.demokotlin.register_login.common.Member
 import com.example.demokotlin.common.Page
+import com.example.demokotlin.datepicker.DatepickerActivity
 import com.example.demokotlin.menu.MainMenu
 import com.example.demokotlin.menu.MainMenuAdapter
 import com.example.demokotlin.mvvm.LoginMvvmActivity
 import com.example.demokotlin.recycler_view.UpdateRecyclerViewActivity
 import com.example.demokotlin.register_login.RegisterLoginActivity
+import com.example.demokotlin.spinner.SpinnerActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainMenuAdapter.SetOnClickListener {
@@ -32,6 +34,8 @@ class MainActivity : AppCompatActivity(), MainMenuAdapter.SetOnClickListener {
     private fun addMenu() {
         menu.add(MainMenu(UpdateRecyclerViewActivity::class.java, "UpdateRecyclerView"))
         menu.add(MainMenu(LoginMvvmActivity::class.java, "Login MVVM"))
+        menu.add(MainMenu(SpinnerActivity::class.java, "Spinner"))
+        menu.add(MainMenu(DatepickerActivity::class.java, "Datepicker"))
     }
 
     private fun recyclerView() {
