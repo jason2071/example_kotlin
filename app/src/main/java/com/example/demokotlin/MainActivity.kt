@@ -12,6 +12,7 @@ import com.example.demokotlin.datepicker.DatepickerActivity
 import com.example.demokotlin.menu.MainMenu
 import com.example.demokotlin.menu.MainMenuAdapter
 import com.example.demokotlin.mvvm.LoginMvvmActivity
+import com.example.demokotlin.reader.ReaderActivity
 import com.example.demokotlin.recycler_view.UpdateRecyclerViewActivity
 import com.example.demokotlin.register_login.RegisterLoginActivity
 import com.example.demokotlin.spinner.SpinnerActivity
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity(), MainMenuAdapter.SetOnClickListener {
         menu.add(MainMenu(LoginMvvmActivity::class.java, "Login MVVM"))
         menu.add(MainMenu(SpinnerActivity::class.java, "Spinner"))
         menu.add(MainMenu(DatepickerActivity::class.java, "Datepicker"))
+        menu.add(MainMenu(ReaderActivity::class.java, "Reader"))
     }
 
     private fun recyclerView() {
