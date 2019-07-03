@@ -8,7 +8,8 @@ import android.view.ViewGroup
 import com.example.demokotlin.R
 import kotlinx.android.synthetic.main.item_update_layout.view.*
 
-class MyAdapter(private val dataSource: ArrayList<String>): RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class MyAdapter(private val dataSource: ArrayList<String>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_update_layout, parent, false))
     }
@@ -21,27 +22,24 @@ class MyAdapter(private val dataSource: ArrayList<String>): RecyclerView.Adapter
         holder.bind(dataSource[position])
     }
 
-    class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        fun bind(message: String) {
-            itemView.textViewMessage.text = message
-        }
-
-    }
-
     fun insertItem(newList: ArrayList<String>) {
-        val diffUtilCallback = MyDiffUtilCallback(dataSource, newList)
+        val diffUtilCallback = MyDiffUtilCallback(dataSource as ArrayList<Any>, newList as ArrayList<Any>)
         val diffResult = DiffUtil.calculateDiff(diffUtilCallback)
-
         dataSource.addAll(newList)
         diffResult.dispatchUpdatesTo(this)
     }
 
     fun updateItem(newList: ArrayList<String>) {
-        val diffUtilCallback = MyDiffUtilCallback(dataSource, newList)
+        val diffUtilCallback = MyDiffUtilCallback(dataSource as ArrayList<Any>, newList as ArrayList<Any>)
         val diffResult = DiffUtil.calculateDiff(diffUtilCallback)
-
         dataSource.clear()
         dataSource.addAll(newList)
         diffResult.dispatchUpdatesTo(this)
+    }
+
+    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bind(message: String) {
+            itemView.textViewMessage.text = message
+        }
     }
 }

@@ -8,10 +8,7 @@ import android.view.ViewGroup
 import com.example.demokotlin.R
 import kotlinx.android.synthetic.main.item_menu_layout.view.*
 
-class MainMenuAdapter(
-    private val mainMenus: ArrayList<MainMenu>,
-    private val listener: SetOnClickListener
-): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MainMenuAdapter(private val passMenuData: PassMenuData) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_menu_layout, parent, false)
@@ -19,12 +16,12 @@ class MainMenuAdapter(
     }
 
     override fun getItemCount(): Int {
-        return mainMenus.size
+        return passMenuData.mainMenus.size
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         holder as MainViewHolder
-        holder.bind(mainMenus[position], listener)
+        holder.bind(passMenuData.mainMenus[position], passMenuData.listener)
     }
 
     class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -39,4 +36,6 @@ class MainMenuAdapter(
     interface SetOnClickListener {
         fun onItemClickListener(activity: Class<out Activity>, title: String)
     }
+
+    data class PassMenuData(val mainMenus: ArrayList<MainMenu>, val listener: SetOnClickListener)
 }

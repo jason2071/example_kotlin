@@ -2,7 +2,8 @@ package com.example.demokotlin.recycler_view
 
 import android.support.v7.util.DiffUtil
 
-class MyDiffUtilCallback(private val oldData: ArrayList<String>, private val newData: ArrayList<String>): DiffUtil.Callback() {
+class MyDiffUtilCallback(private val oldData: ArrayList<Any>, private val newData: ArrayList<Any>): DiffUtil.Callback() {
+
     override fun areItemsTheSame(oldPosition: Int, newPosition: Int): Boolean {
         return oldPosition == newPosition
     }
