@@ -18,8 +18,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainMenuAdapter.SetOnClickListener {
 
-    private val menu = ArrayList<MainMenu>()
     private var listener: MainMenuAdapter.SetOnClickListener = this
+    private var menu = ArrayList<MainMenu>()
     private lateinit var mAdapter: MainMenuAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity(), MainMenuAdapter.SetOnClickListener {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////// DATA SOURCE /////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
+
     private fun addMenuData() {
         menu.add(MainMenu(UpdateRecyclerViewActivity::class.java, "UpdateRecyclerView"))
         menu.add(MainMenu(LoginMvvmActivity::class.java, "Login MVVM"))

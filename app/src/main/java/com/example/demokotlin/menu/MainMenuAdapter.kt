@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.demokotlin.R
 import kotlinx.android.synthetic.main.item_menu_layout.view.*
 
-class MainMenuAdapter(private val passMenuData: PassMenuData) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MainMenuAdapter(private var passMenuData: PassMenuData) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_menu_layout, parent, false)
@@ -37,5 +37,5 @@ class MainMenuAdapter(private val passMenuData: PassMenuData) : RecyclerView.Ada
         fun onItemClickListener(activity: Class<out Activity>, title: String)
     }
 
-    data class PassMenuData(val mainMenus: ArrayList<MainMenu>, val listener: SetOnClickListener)
+    data class PassMenuData(var mainMenus: ArrayList<MainMenu>, var listener: SetOnClickListener)
 }
